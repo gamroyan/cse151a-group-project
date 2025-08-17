@@ -1,5 +1,7 @@
 # Cse151A - Group Project
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/gamroyan/cse151a-group-project/blob/main/CSE151A_Group_Project.ipynb)
+
 ## Data and Environment Setup
 
 Link to the data: https://huggingface.co/datasets/wykonos/movies
