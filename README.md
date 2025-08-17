@@ -1,6 +1,6 @@
 # Cse151A - Group Project
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/gamroyan/cse151a-group-project/blob/main/Milestone2.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1pX_-QEuy3mVDzJt_kRWsYxMzv_V7c8IX?usp=sharing)
 
 ## Data and Environment Setup
 
