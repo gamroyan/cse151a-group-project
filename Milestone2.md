@@ -1,5 +1,6 @@
 ## Milestone 2: Data Preprocessing
 **All histograms/ plots of data attributes are in the jupyter notebook linked in README.md**
+
 Our dataset offers a wide variety of attributes for each movie, like genre, runtime, budget, revenue, and status. We have many numerical attributes like popularity and date released but also many categorical features like original language and overview. 
 
 Firstly, we realized that deleting rows isn't the most effective way to address missing data in this dataset. It would significantly reduce our dataset, as some of the attributes like revenue are consistently empty. We could replace missing numerical features with the mean or median and use a placeholder like "unknown" or "n/a" for the categorical ones instead of dropping null values. If possible, we'd also flag whether a value was missing to help the model find any patterns in the missing data and figure out ways to reduce bias.
