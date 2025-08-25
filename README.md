@@ -4,7 +4,17 @@
 
 This project explores the [Wykonos Movies Dataset](https://huggingface.co/datasets/wykonos/movies) to perform data preprocessing and predictive modeling. We focus on analyzing attributes like genre, runtime, budget, revenue, popularity, and vote averages to build models that predict movie performance.
 
-## Data and Environment Setup
+## Environment Setup
+### Requirements
+```
+- python>=3.9
+- pandas
+- numpy
+- matplotlib
+- seaborn
+- scikit-learn
+- datasets
+```
 
 ### Option 1 – Run on Google Colab
 
