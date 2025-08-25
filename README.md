@@ -2,10 +2,35 @@
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1pX_-QEuy3mVDzJt_kRWsYxMzv_V7c8IX?usp=sharing)
 
+This project explores the [Wykonos Movies Dataset](https://huggingface.co/datasets/wykonos/movies) to perform data preprocessing and predictive modeling. We focus on analyzing attributes like genre, runtime, budget, revenue, popularity, and vote averages to build models that predict movie performance.
+
 ## Data and Environment Setup
 
-Link to the data: https://huggingface.co/datasets/wykonos/movies
+### Option 1 – Run on Google Colab
 
+Simply click the **Open in Colab** button above and run the notebooks in order.
+
+### Option 2 – Run Locally
+
+1. Clone this repository
+  ```
+  git clone https://github.com/gamroyan/cse151a-group-project.git
+  cd cse151a-group-project
+  ```
+2. Install dependencies
+  ```
+  pip install pandas numpy matplotlib seaborn scikit-learn datasets
+  ```
+
+4. Launch Jupyter Notebook
+  ```
+  jupyter notebook
+  ```
+
+## Dataset
+- **Source:** [Hugging Face: wykonos/movies](https://huggingface.co/datasets/wykonos/movies)
+- **Features:** id, title, genres, original_language, overview, popularity, budget, revenue, runtime, vote_average, vote_count, etc
+- **Dataset size:** ~722,796 movies with 20 attributes.
 To get the dataset locally, we included imports from datasets to fetch the dataset from huggingface:
 
 ```python
@@ -14,9 +39,11 @@ import pandas as pd
 load_dataset("wykonos/movies")
 ```
 
-*Data Exploration and Data Plots included in Notebook
+## Contributors
+- **Team members:** Gayane Amroyan, Ethan Jenkins, Richenda Janowitz, Akshay Uppal
+- **Course:** CSE151A at UCSD
 
-## Data Preprocessing
+## Milestone 2: Data Preprocessing
 Our dataset offers a wide variety of attributes for each movie, like genre, runtime, budget, revenue, and status. We have many numerical attributes like popularity and date released but also many categorical features like original language and overview. 
 
 Firstly, we realized that deleting rows isn't the most effective way to address missing data in this dataset. It would significantly reduce our dataset, as some of the attributes like revenue are consistently empty. We could replace missing numerical features with the mean or median and use a placeholder like "unknown" or "n/a" for the categorical ones instead of dropping null values. If possible, we'd also flag whether a value was missing to help the model find any patterns in the missing data and figure out ways to reduce bias.
