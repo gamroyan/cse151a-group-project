@@ -6,7 +6,7 @@ Not only does predicting movie performance connect to a topic lots of people are
 
 ## 2 Figures
 ### List of Figures
-- Figure 1: Pair plot to show distribution of movie runtimes before preprocessing.
+- Figure 1: Pair plot to show distribution of movie attributes before preprocessing.
 - Figure 2: Correlation matrix of dataset attributes.
 - Figure 3: Distribution of raw movie revenues compared to log-transformed revenues.
 - Figure 4: Distribution of raw movie budgets compared to log-transformed budgets.
@@ -21,7 +21,7 @@ We began by exploring the movies dataset, which contains over 700,000 entries wi
 <p align="center">
   <img src="Figure1.png" width="800"/>
 </p>
-<p align="center"><em>Figure 1. Distribution of movie runtimes before preprocessing.</em></p>
+<p align="center"><em>Figure 1. Distribution of movie attributes before preprocessing.</em></p>
 
 
 <p align="center">
