@@ -97,7 +97,7 @@ The resulting 2D scatterplot (Figure 5) revealed local clustering patterns where
 ### 3.5  Model 2: K-Nearest-Neighbors (KNN)
 Based on the clustering patterns revealed in the t-SNE visualization, we implemented a K-Nearest Neighbors (KNN) regressor for our second model to test whether neighborhood-based predictions could outperform the global Random Forest model.
 
-To prepare the data, we standardized all numerical features so they had a mean of zero and unit variance. The dataset was again split into an 80/20 train-test split, which was consistent with Model 1. Like model 1, we trained on the standardized training set and evaluated on the test set, but this time around we experimented with multiple values of K (the number of neighbors), specifically testing K = 2, K = 5, and K = 8. Performance was measured using the same metrics as we did in model 1, MSE, RMSE, R^2, and the percentage of predictions within +/- 1.0 rating of the ground truth.
+To prepare the data, we standardized all numerical features so they had a mean of zero and unit variance. The dataset was again split into an 80/20 train-test split, which was consistent with Model 1. Like model 1, we trained on the standardized training set and evaluated on the test set, but this time around we experimented with multiple values of K (the number of neighbors), specifically testing K = 2, K = 5, and K = 8.
 
 
 ## 4  Results
