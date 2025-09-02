@@ -1,5 +1,5 @@
 # Final Report
-## Introduction
+## 1  Introduction
 Have you ever sat down to watch a movie and struggled to decide which one might actually be worth your time? This everyday dilemma reflects a much larger challenge in the film industry: predicting which movies will perform well and resonate with audiences. That's why we chose to use the [Wykonos Movies Dataset](https://huggingface.co/datasets/wykonos/movies) to develop a predictive model that predicts movie performance based on 20 attributes that ranged from financial measures like budget and revenue to cultural markers like genre and runtime. With over 700k movies in this dataset, the variety of films mirrors the real-world diversity of the film industry. 
 
 Not only does predicting movie performance connect to a topic lots of people are passionate about, it also generates data-driven insights with practical value for the entertainment and media industries. For film studios and streaming platforms, predictive insights can guide decisions on how to target marketing and how to anticipate audience preferences based on the types of movies they make/sell. For audiences, this predictive model highlights the quantitative factors that influence success in a very subjective industry. On a smaller scale, this kind of model could help everyday viewers decide which movie is worth watching on a given night.
@@ -7,13 +7,13 @@ Not only does predicting movie performance connect to a topic lots of people are
 ## Figures
 **(TO-DO)** Your report should include relevant figures of your choosing to help with the narration of your story, including legends (similar to a scientific paper). For reference you search machine learning and your model in google scholar for reference examples.  (3 points)
 
-## Methods
+## 2  Methods
 
-### Data Exploration
+### 2.1 Data Exploration
 We began by exploring the movies dataset, which contains over 700,000 entries with both numerical and categorical attributes. Numerical attributes include runtime, budget, revenue, popularity, vote count, and release date. Categorical attributes include original language, status, genre, and overview. Initial exploration of this dataset involved plotting histograms and distributions to understand ranges and skewness and help us figure out how to address missing data. **(TO-DO: ADD figure of plots)** After exploring, we realized we had a lot of cleaning up to do, especially when it came to the skew in some of the attributes and missing data points.
 
 
-### Preprocessing
+### 2.2  Preprocessing
 We began preprocessing by filtering the dataset to only include movies with ```status = "Released"```. Unrealeased/planned movies don't provide us much relevant information when training a model to predict how a movie will perform. From the full list of attributes, we kept the most relevant features for prediction: ```original_language```, ```popularity```, ```release_date```, ```budget```, ```revenue```, ```runtime```, ```vote_average```, and ```vote_count```. After feature selection, we prepared the dataset for modeling by:
 
 1. Handling Missing Data
@@ -38,7 +38,7 @@ We began preprocessing by filtering the dataset to only include movies with ```s
 These preprocessing steps ensured that the data was consistent and normalized among all the attributes.
 
 
-### Model 1: Decision Trees, Random Forest Regressor
+### 2.3  Model 1: Decision Trees, Random Forest Regressor
 For our first predictive model, we implemented a Random Forest Regressor. The dataset was split into 80% training and 20% testing, with random shuffling (```random_state = 14```) applied before the split. Features were standardized so that numerical attributes had mean = 0 and standard deviation = 1.
 
 The Random Forest was trained with the hyperparameters:
@@ -49,18 +49,7 @@ The Random Forest was trained with the hyperparameters:
 - bootstrap = True
 - max_samples = 0.7
 
-Model evaluation was performed on the test split using Mean Squared Error (MSE), Root Mean Squared Error (RMSE), R^2, and the percentage of predictions within +/- 1.0 of the true vote_average.
-
-Model 1 Test Results:
-- Test MSE = 1.2107
-- Test RMSE ≈ 1.1003
-- Test R^2 = 0.8787
-- +/- 1.0 accuracy = 82.83%
-
-On the fitting curve, the Random Forest with depth 12 and minimum samples per leaf = 5 hit the “sweet spot.” Shallower forests (lower depth) tended to underfit, showing higher test error, while deeper forests lowered training error but began to overfit. This was a strong baseline, but we wanted to improve performance by clustering the dataset and using KNN within our clusters for our second model.
-
-
-### Unsupervised Learning: PCA
+### 2.4  Unsupervised Learning: PCA
 Before building our second model, we applied **t-distributed Stochastic Neighbor Embedding (t-SNE)** to project the high-dimensional feature space into two dimensions for visualization. This allowed us to see whether clusters of “good” and “bad” movies (based on ```vote_average```) could be separated in a lower-dimensional space. 
 
 20,000 movies were randomly selected from the dataset, and we applied TSNE with parameters:
@@ -75,12 +64,26 @@ Before building our second model, we applied **t-distributed Stochastic Neighbor
 The resulting 2D scatterplot **(TO-DO: ADD figure)** revealed local clustering patterns where “good” movies (```vote_average >= mean(vote_average)```) were labeled green and “bad” movies (```vote_average < mean(vote_average```) were labeled red. While the boundaries weren't perfectly separate, the visualization supported the idea that neighborhood-based models like KNN could be effective at capturing local structure in this dataset.
 
 
-### Model 2: K-Nearest-Neighbors (KNN)
+### 2.5  Model 2: K-Nearest-Neighbors (KNN)
 Based on the clustering patterns revealed in the t-SNE visualization, we implemented a K-Nearest Neighbors (KNN) regressor for our second model to test whether neighborhood-based predictions could outperform the global Random Forest model.
 
 To prepare the data, we standardized all numerical features so they had a mean of zero and unit variance. The dataset was again split into an 80/20 train-test split, which was consistent with Model 1. Like model 1, we trained on the standardized training set and evaluated on the test set, but this time around we experimented with multiple values of K (the number of neighbors), specifically testing K = 2, K = 5, and K = 8. Performance was measured using the same metrics as we did in model 1, MSE, RMSE, R^2, and the percentage of predictions within +/- 1.0 rating of the ground truth.
 
-Model 2 Test Results:
+
+## 3  Results
+Model evaluation was performed on the test split using Mean Squared Error (MSE), Root Mean Squared Error (RMSE), R^2, and the percentage of predictions within +/- 1.0 of the true vote_average.
+
+### 3.1  Model 1 Results
+Test Results:
+- Test MSE = 1.2107
+- Test RMSE ≈ 1.1003
+- Test R^2 = 0.8787
+- +/- 1.0 accuracy = 82.83%
+
+On the fitting curve, the Random Forest with depth 12 and minimum samples per leaf = 5 hit the “sweet spot.” Shallower forests (lower depth) tended to underfit, showing higher test error, while deeper forests lowered training error but began to overfit. This was a strong baseline, but we wanted to improve performance by clustering the dataset and using KNN within our clusters for our second model.
+
+### 3.2  Model 2 Results
+Test Results:
 - K = 2: MSE = 1.424, RMSE = 1.1931, R^2 = 0.8545, +/- 1.0 accuracy = 84.68%
 - K = 5: MSE = 1.334, RMSE = 1.1551, R^2 = 0.8636, +/- 1.0 accuracy = 83.73%
 - K = 8: MSE = 1.385, RMSE = 1.1769, R^2 = 0.8585, +/- 1.0 accuracy = 81.90%
