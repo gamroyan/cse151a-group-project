@@ -1,8 +1,12 @@
 # Cse151A - Group Project
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1pX_-QEuy3mVDzJt_kRWsYxMzv_V7c8IX?usp=sharing) - Please use this link to access final project notebook.
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1pX_-QEuy3mVDzJt_kRWsYxMzv_V7c8IX?usp=sharing)
 
-Final report is contained in document titled "finalreport.md"
+*Please use the above link to access final project notebook.*
+
+*Final report is contained in document titled "finalreport.md"*
+
+***
 
 This project explores the [Wykonos Movies Dataset](https://huggingface.co/datasets/wykonos/movies) to perform data preprocessing and predictive modeling. We focus on analyzing attributes like genre, runtime, budget, revenue, popularity, and vote averages to build models that predict movie performance.
 
