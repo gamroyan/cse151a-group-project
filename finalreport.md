@@ -75,7 +75,7 @@ The Random Forest was trained with the hyperparameters:
 - bootstrap = True
 - max_samples = 0.7
 
-### 3.4  Unsupervised Learning: PCA
+### 3.4  Unsupervised Learning: TSNE
 Before building our second model, we applied **t-distributed Stochastic Neighbor Embedding (t-SNE)** to project the high-dimensional feature space into two dimensions for visualization. This allowed us to see whether clusters of “good” and “bad” movies (based on ```vote_average```) could be separated in a lower-dimensional space. 
 
 20,000 movies were randomly selected from the dataset, and we applied TSNE with parameters:
