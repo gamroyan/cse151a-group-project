@@ -159,12 +159,26 @@ Our Random Forest Regressor produced believable performance with our t-SNE + KNN
   * Explore original language preditability. Are there region specific features here that make more of less of a difference? To keep columns lower, consider different groupings of languages instead of just top 10.
   * Explore the full release date, not just the year in which a movie was released. Things like month or quarter, holiday, weekend, or seasonal movie releases may have an effect on predictability.
 * Model upgrades:
-  * Supervised Learning: SVM with RBF Kernel after verifying nonlinear structure
-  * Unsupervised Learning: Give PCA another try with higher dimensionality and more complete data, then use K-Means. Validate with silhouette method. We need to watch our variance with PCA and try for something with 90%+ variance
+  * Supervised Learning: SVM with RBF Kernel - Model does well with large number of features which will be useful if we add more features back in, nonlinear data, and tends to reduce RMSE if we can find the right hyperparameters; Might be difficult to outperform RFF.
+  * Unsupervised Learning: Give PCA another try with higher dimensionality and more complete data, then use K-Means. Validate with silhouette method to pick the best k. We need to watch our variance with PCA and try for something with 90%+ variance
 * Use case improvements:
   * After adding back in dropped features, try models again but with only pre-release features to see if there's predictability with features that are only known at the time of release.
 
 ## 7  Statement of Collaboration
-This is a statement of contribution by each member. This will be taken into consideration when making the final grade for each member in the group. Did you work as a team? was there a team leader? project manager? coding? writer? etc. Please be truthful about this as this will determine individual grades in participation. There is no job that is better than the other. If you did no code but did the entire write up and gave feedback during the steps and collaborated then you would still get full credit. If you only coded but gave feedback on the write up and other things, then you still get full credit. If you managed everyone and the deadlines and setup meetings and communicated with teaching staff only then you get full credit. Every role is important as long as you collaborated and were integral to the completion of the project. If the person did nothing. they risk getting a big fat 0. Just like in any job, if you did nothing, you have the risk of getting fired. Teamwork is one of the most important qualities in industry and academia! 
+Generally, all work was divided evenly among members of the group. Everyone got a chance to work on coding aspects and participate in write ups. Exact project assignments are listed below. Group met in person and over Discord to decide on what sections they would complete. Feedback was discussed over Discord/through text and decisions on models and preprocessing steps were debated as a team. Each person contributed to the best of their ability.
 
-Format: Start with Name: Title: Contribution. If the person contributed nothing then just put in writing: Did not participate in the project. (3 points)
+Name: Gayane Amroyan
+Title: Team Member
+Contribution: 
+
+Name: Richenda Janowitz
+Title: Team Member
+Contribution: 
+
+Name: Ethan Jenkins
+Title: Team Member
+Contribution: 
+
+Name: Akshay Uppal
+Title: Team Member
+Contribution: 
