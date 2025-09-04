@@ -2,9 +2,9 @@
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1pX_-QEuy3mVDzJt_kRWsYxMzv_V7c8IX?usp=sharing)
 
-*Please use the above link to access final project notebook.*
+*Please use the above link to access the final project notebook.*
 
-*Final report is contained in document titled "finalreport.md"*
+*Our Final report is contained in the document titled "finalreport.md" for readability and ease of access.*
 
 ***
 
