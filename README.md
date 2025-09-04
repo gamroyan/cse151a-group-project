@@ -59,3 +59,42 @@ load_dataset("wykonos/movies")
 ## Contributors
 - **Team members:** Gayane Amroyan, Ethan Jenkins, Richenda Janowitz, Akshay Uppal
 - **Course:** CSE151A at UCSD
+- *See finalreport.md for detailed collaboration information*
+
+## Changelog
+#### 09/03/2025
+- Model conclusion - *Richenda*
+- Written report (Discussion, Conclusion, Statement of Collaboration) - *Richenda*
+#### 09/01/2025
+- Written report (Intro, Figures, Methods, Results) - *Gayane*
+#### 08/30/2025
+- KNN on reduced data - *Ethan*
+- Model evaluation and predictions - *Ethan*
+#### 08/29/2025
+- t-SNE - *Shay*
+#### 08/27/2025
+- Milestone 4 Meeting; *Shay, Ethan, Gayane*
+- PCA - *Ethan*
+#### 08/24/2025
+- Random Forest Regressor added, Conclusion written - *Shay*
+- Milestone 3 Q3 and Q4 written - *Ethan*
+#### 08/23/2025
+- Plots added to visualize log transform - *Gayane*
+- KNN model added - *Ethan*
+#### 08/22/2025
+- Milestone 3 meeting - *Shay, Richenda, Gayane, Ethan*
+- Data preprocessing step complete (duplicates, missing data, zeros, release_year to year only, one-hot encoding, log transforms) - *Gayane, Richenda*
+#### 08/21/2025
+- Milestone 3 outlined added to notebook - *Richenda*
+#### 08/17/2025
+- Data exploration written - *Ethan* 
+- Data plots added - *Richenda, Gayane, Ethan* 
+- Preprocessing outline - *Gayane*
+#### 08/13/2025
+- Milestone 2 created - *Gayane*
+#### 08/09/2025
+- Milestone 1 abstract written - *Richenda*
+- Edited - *Ethan, Gayane* 
+- Submitted - *Shay*
+#### 08/07/2025
+- Meeting for potential datasets for exploration. wykonos/movies dataset chosen - *Ethan, Shay, Gayane, Richenda*
