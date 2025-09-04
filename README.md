@@ -59,7 +59,7 @@ load_dataset("wykonos/movies")
 ## Contributors
 - **Team members:** Gayane Amroyan, Ethan Jenkins, Richenda Janowitz, Akshay Uppal
 - **Course:** CSE151A at UCSD
-- *See finalreport.md for detailed collaboration information*
+- *See finalreport.md and the changelog below for detailed collaboration information*
 
 ## Changelog
 #### 09/03/2025
