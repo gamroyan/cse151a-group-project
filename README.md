@@ -4,7 +4,7 @@
 
 *Please use the above link to access the final project notebook.*
 
-*Our Final report is contained in the document titled "finalreport.md" for readability and ease of access.*
+*Our final written report is contained in the document titled "finalreport.md" for readability and ease of access.*
 
 ***
 
