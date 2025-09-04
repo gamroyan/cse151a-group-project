@@ -11,6 +11,7 @@ Not only does predicting movie performance connect to a topic lots of people are
 - Figure 3: Distribution of raw movie revenues compared to log-transformed revenues.
 - Figure 4: Distribution of raw movie budgets compared to log-transformed budgets.
 - Figure 5: t-SNE visualization of 20,000 sampled movies projected into two dimensions
+- Figure 6: PCA projection of the dataset into two principal components (PC1 vs. PC2) with threshold = 7.
 - Table 1: Classification report for KNN (K = 5)
   
 ## 3  Methods
@@ -144,7 +145,13 @@ We began our preprocessing step by finalizing what features made the most sense 
 Our first model, Random Forest Regressor, was chosen because we felt it would manage well against our heavily skewed dataset and mixed features (numerical + one-hot categoricals). Our dataset was also fairly large, so we wanted something that would run smoothly with a dataset of over 700k entries. Since this would be our supervised learning model, we chose an 80/20 train/test split. Most of our hyperparameters like n_estimators for the size of our forest, min_samples_leaf, and max_samples/bootstrap were chosen to prevent model issues due to irrelevant variation in our dataset, issues in the similarity of data that we did have (large cluster of ratings in the 6-8 range) and the speed at which our model would train. The results for this first model seem believable. We did have to tweak our model in order to prevent over or underfitting and make sure our test-train gap was appropriate. Since our target range should generally be within a 6-8 movie score prediction our accuracy here matters less. We relied on RMSE and R^2 to gauge the success of our model's predictive ability. Ultimately, we ended up with something that produced reasonable results that we thought we might be able to improve with a second model.
 
 ### 5.4  Unsupervised Learning: TSNE
-Initially, we attempted to use PCA for dimensional reduction, but found that what we ended up with at the end did not look promising. There were no obvious local coherent neighborhoods in our data and what we were essentially left with was a giant blob with no separation. Instead of continuing to refine our PCA method, we switched to t-SNE, which when plotted on a 2D scatterplot gave us some good ideas as to what we would be able to use for a clustering method. We colored our plot using good and bad labels (movies with a rating below 7.0 or above or equal to 7.0) and noted that while there was definitely some overlap, we were starting to see some grouping "swirls" that looked quite defined.  
+Initially, we attempted to use PCA for dimensional reduction, but found that what we ended up with at the end did not look promising. Looking at Figure 6, it's obvious that there's no local coherent neighborhoods in our data as there's no separation between the 'good' (green) and 'bad' (red) points. What we were essentially left with was a giant blob with no separation, which motivated our shift to another visualization method, t-SNE. Instead of continuing to refine our PCA method, we switched to t-SNE, which when plotted on a 2D scatterplot gave us some good ideas as to what we would be able to use for a clustering method. We colored our plot using good and bad labels (movies with a rating below 7.0 or above or equal to 7.0) and noted that while there was definitely some overlap, we were starting to see some grouping "swirls" that looked quite defined.  
+
+<p align="center">
+  <img src="Figure6.png" width="550"/>
+</p>
+<p align="center" ><em>Figure 6. PCA projection of the dataset into two principal components (PC1 vs. PC2) with threshold = 7.</em></p>
+
 
 ### 5.5  Model 2: K-Nearest-Neighbors (KNN)
 We felt with the non-linearity of our data and the ease at which we would be able to tinker with the hyperparameters of KNN, this would be our best method to test to see if movies near each other would have similar ratings. We tried several hyperparameters and settled on k=5 being the best choice of nearest neighbors as it gave us the highest R^2 but lowest RMSE. This told us that we were probably correct, that movies near each other in our feature space would have similar features, however, our original model was still a slightly better in terms of modeling actual ratings. The results of our second model again seem reasonable as they're rather close to what we got with our Random Forest Regressor. Our KNN showed some predictive value which matched what we saw in our t-SNE plot.
