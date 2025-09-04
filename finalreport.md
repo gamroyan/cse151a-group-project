@@ -174,18 +174,18 @@ Our Random Forest Regressor produced believable performance with our t-SNE + KNN
 ## 7  Statement of Collaboration
 Generally, all work was divided evenly among members of the group. Everyone got a chance to work on coding aspects and participate in write ups. Exact project assignments are listed below. Group met in person and over Discord to decide on what sections they would complete. Feedback was discussed over Discord/through text and decisions on models and preprocessing steps were debated as a team. Each person contributed to the best of their ability.
 
-Name: Gayane Amroyan
-Title: Team Member
-Contribution: 
+#### Name: Gayane Amroyan
+- Title: Team Member
+- Contribution: Milestone 1 abstract edits, Milestone 2 data plots, data preprocessing outline, Milestone 3 data preprocessing, Milestone 4 written report (Intro, Figures, Methods, Results)
 
-Name: Richenda Janowitz
-Title: Team Member
-Contribution: 
+#### Name: Richenda Janowitz
+- Title: Team Member
+- Contribution: Milestone 1 abstract, Milestone 2 data plots, Milestone 3 data preprocessing, Milestone 4 model conclusion, written report (Discussion, Conclusion, Statement of Collaboration)
 
-Name: Ethan Jenkins
-Title: Team Member
-Contribution: 
+#### Name: Ethan Jenkins
+- Title: Team Member
+- Contribution: Milestone 1 abstract edits, Milestone 2 data exploration, data plots, Milestone 3 Q3, Q4, PCA, Milestone 4 evaluation and predictions, KNN model
 
-Name: Akshay Uppal
-Title: Team Member
-Contribution: 
+#### Name: Akshay Uppal
+- Title: Team Member
+- Contribution: Random Forest Regressor, Milestone 3 model conclusions, t-SNE
